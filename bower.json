@@ -2,7 +2,6 @@
   "name": "jquery.ui-popup",
   "version": "1.0.0",
   "main": [
-    "./css/jquery.ui-popup.css",
     "./js/jquery.ui-popup.js"
   ],
   "dependencies": {
