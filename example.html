@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/jquery.ui-popup.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="js/jquery.ui-popup.js"></script>
+        <script>
+
+            $(document).ready(function () {
+
+                $('.has-popup')
+                    .UIPopup({
+                        position: 'bottom'
+                    })
+                    .on('open', function () {
+
+                        $('.btn-group').addClass('open');
+
+                    })
+                    .on('close', function () {
+
+                        $('.btn-group').removeClass('open');
+
+                    });
+
+
+                $('input[type=checkbox]')
+                    .on('change', function () {
+
+                        var name = $(this).prop('name'),
+                            value = $(this).prop('checked');
+
+                        if (name === 'timeout3000') {
+
+                            name  = 'timeout';
+                            value = (value) ? 3000 : 1500;
+
+                        }
+
+                        $('.has-popup').UIPopup( name, value );
+                    });
+
+            });
+
+        </script>
+        <style type="text/css">
+
+            .value.editing {
+                color: #aaa;
+            }
+
+            .ui-slider-control.horizontal {
+                width: 100%;
+            }
+            .ui-slider-control.vertical {
+                height: 200px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>UI<strong>Slider</strong></h1>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 text-center">
+                    <div class="btn-group">
+                        <button class="btn btn-default dropdown-toggle has-popup" type="button"
+                                data-target="#popup1">
+                            Click <span class="caret"></span>
+                        </button>
+                        <ul id="popup1" class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Play with control options:</div>
+                        <div class="panel-body">
+                            <form role="form" onsubmit="return false">
+                                <div class="checkbox">
+                                    <label><input name="timeout3000" type="checkbox" /> timeout = 3000</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="closeByClick" type="checkbox" /> closeByClick</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+					<div class="panel panel-default">
+                        <div class="panel-heading">Little help</div>
+                        <div class="panel-body">
+							You can also specifiy custom options for your control:<ul>
+                                <li><strong>timeout</strong> - timeout to turn off open state when mouse leave element</li>
+                            </ul>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
