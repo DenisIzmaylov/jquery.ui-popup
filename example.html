@@ -48,26 +48,18 @@
         </script>
         <style type="text/css">
 
-            .value.editing {
-                color: #aaa;
-            }
-
-            .ui-slider-control.horizontal {
-                width: 100%;
-            }
-            .ui-slider-control.vertical {
-                height: 200px;
+            .example {
+                margin: 15px;
             }
 
         </style>
-
     </head>
     <body>
         <div class="container">
-            <h1>UI<strong>Slider</strong></h1>
+            <h1>UI<strong>Popup</strong></h1>
             <div class="row">
                 <div class="col-xs-12 col-sm-6 text-center">
-                    <div class="btn-group">
+                    <div class="btn-group example">
                         <button class="btn btn-default dropdown-toggle has-popup" type="button"
                                 data-target="#popup1">
                             Click <span class="caret"></span>
@@ -92,7 +84,10 @@
                                     <label><input name="timeout3000" type="checkbox" /> timeout = 3000</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input name="closeByClick" type="checkbox" /> closeByClick</label>
+                                    <label><input name="closeByTarget" type="checkbox" /> closeByTarget</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="closeByWindow" type="checkbox" /> closeByWindow</label>
                                 </div>
                             </form>
                         </div>
